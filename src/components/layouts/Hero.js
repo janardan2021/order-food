@@ -17,10 +17,9 @@ export default function Hero() {
        texture, from the satisfying crunch to the burst of savory goodness.
        </p>
        <p className="text-lg my-4 px-4">
-       Indulge in the ambiance of our inviting restaurant space. Immerse yourself 
-       in the warmth of our hospitality as you savor each bite of our delectable 
-       dishes. Our restaurant
-       provides the perfect setting for memorable moments shared with loved ones.
+         Immerse yourself in the warmth of our hospitality as you savor each bite 
+         of our delectable dishes. Our restaurant
+        provides the perfect setting for memorable moments shared with loved ones.
        </p>
        <p className="text-lg my-4 px-4">
        Can not make it to our restaurant? No problem! Enjoy the same delightful 
@@ -28,16 +27,16 @@ export default function Hero() {
        </p>
        </div>
 
-       <div className="flex gap-4">
-        <Link href={'/menu'}>
-        <button className="flex gap-4">
-            Order now
+       <div className="flex justify-around space-x-2 ">
+        <Link href={'/menu'} className="w-full">
+        <button className="flex justify-center space-x-4 w-4/6">
+            <p>Order now</p>
             <RightArrow />
         </button>
         </Link>
-        <Link href={'/about'}>
-        <button className="flex gap-4">
-            About us
+        <Link href={'/about'} className="w-full">
+        <button className="flex justify-center space-x-4 w-4/6">
+            <p>About us</p>
             <RightArrow />
         </button>
         </Link>
