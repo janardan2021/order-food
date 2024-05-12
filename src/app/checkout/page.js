@@ -91,7 +91,7 @@ export default function Checkout() {
         setCart(() => state)
         setCartLoaded(true)
         loadUserAddress()
-    },[state, loadUserAddress])
+    },[state])
 
     useEffect(()=>{
         if (cartLoaded) {

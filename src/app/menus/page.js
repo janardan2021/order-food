@@ -147,7 +147,14 @@ export default function Menus() {
 
       <div className="flex flex-col justify-center items-center">
         <label className="font-medium text-lg mb-2">Upload the menu avatar</label>
-        <img src={imageURL } className="object-fit w-36 h-36 rounded-lg border-2 border-green-700"/>
+        <Image src={imageURL }
+                        width={144}
+                        height={144}
+                        alt="Picture of the menu item"
+                        className="object-fit w-36 h-36 rounded-lg shadow-md shadow-gray-200
+                          hover:shadow-lg hover:shadow-gray-300"
+                      />
+        {/* <img src={imageURL } className="object-fit w-36 h-36 rounded-lg border-2 border-green-700"/> */}
         <input className="pl-32 rounded-lg p-1" type="file" onChange={updateMenuPicture}/>
         
         {/* <button type="button" onClick={updateProfilePicture}>Edit</button> */}

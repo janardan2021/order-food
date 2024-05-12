@@ -65,7 +65,7 @@ export default function ProfilePage() {
             setImage(session.user.image)
             loadUserAddress()
         }
-    },[status])
+    },[status, session])
 
     async function updateProfileInfo(e) {
         e.preventDefault()

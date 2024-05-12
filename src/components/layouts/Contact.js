@@ -9,7 +9,7 @@ export default function Contact() {
             <p className=" text-lg my-2 p-4">
             Visit usto experience culinary bliss like never before. 
             For inquiries, reservations, or delivery orders, feel free to
-             reach out to us. We can't wait to welcome you to Savory
+             reach out to us. We can not wait to welcome you to Savory
               Delights and create unforgettable memories together.
             </p>
             <p className=" text-lg my-2 p-4">

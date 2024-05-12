@@ -22,7 +22,7 @@ export default function CartIcon() {
     
     useEffect(()=>{
        changeState(state)
-    },[state, changeState])
+    },[state])
 
   return (
     <div className="flex relative pt-1 ">

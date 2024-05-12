@@ -24,7 +24,7 @@ export default function AuthenticationError({ error }){
 
   useEffect(() => {
     notifyError()
-  }, [notifyError]);
+  }, []);
 
   return (
     <div className="mt-14 mb-80">

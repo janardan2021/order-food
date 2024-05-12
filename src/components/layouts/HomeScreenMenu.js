@@ -90,7 +90,7 @@ export default function HomeScreenMenu() {
       loadMenuItems()
     }
    
-  },[loadMenuItems, menusLoaded])
+  },[ menusLoaded])
 
 
   // useEffect(()=>{
