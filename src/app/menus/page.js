@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import { redirect } from "next/navigation"
 import UserNavigation from "@/components/layouts/UserNavigation"
 import { useState } from "react"
+import Image from 'next/image'
 
 import MenusList from '@/components/layouts/MenusList'
 
