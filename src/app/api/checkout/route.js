@@ -72,7 +72,8 @@ export async function POST(req){
     
     const client_reference_id = JSON.stringify(createdOrder._id)
       //  Do not forget to add APP_URL to encirenvenment variable when deploying
-      
+      //  Also do not forget to change webhook secret after adding new endpoint in stripe dashboard
+
     const checkoutSession = await stripe.checkout.sessions.create({
         line_items,
         shipping_options,
