@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from "next/navigation"
 import toast from 'react-hot-toast';
 
-export default function AuthenticationError({ error }){
+export default function AuthError({ error }){
   const router = useRouter();
   const [someError, setSomeError] = useState(true)
 
