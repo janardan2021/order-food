@@ -11,7 +11,7 @@ export const useLocalStorage = () => {
             setInitialState(() => {cartItems: []})
         }
         
-      }, [])
+      }, [localStorage])
    
     return initialState
 }

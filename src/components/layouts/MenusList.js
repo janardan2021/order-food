@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react"
 import toast from 'react-hot-toast';
 import Loader from './Loader.js'
+import Image from 'next/image'
 
 export default function MenusList() {
 
@@ -63,8 +64,18 @@ export default function MenusList() {
                                           hover:shadow-lg hover:shadow-gray-400 transition ease-in-out p-4 w-full">
                     <p className="text-xl font-medium my-2">{menuItem.name}</p>
                     <div>
-                    <img src={menuItem.image } className="object-fit w-48 h-36 rounded-lg shadow-md shadow-gray-200
-                          hover:shadow-lg hover:shadow-gray-300"/>
+                      
+                    <Image
+                        src={menuItem.image }
+                        width={192}
+                        height={144}
+                        priority={false}
+                        alt="Picture of the menu item"
+                        className="rounded-lg shadow-md shadow-gray-200
+                          hover:shadow-lg hover:shadow-gray-300"
+                      />
+                    {/* <img src={menuItem.image } className="object-fit w-48 h-36 rounded-lg shadow-md shadow-gray-200
+                          hover:shadow-lg hover:shadow-gray-300"/> */}
                     </div>
                     <p className="my-2">{menuItem.description}</p>
                     <p>Starting from: <span className="text-green-700">${menuItem.sizes[0].price}</span></p>

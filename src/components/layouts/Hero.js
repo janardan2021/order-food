@@ -1,11 +1,12 @@
 
 import RightArrow from "../icons/RightArrow";
 import Link from "next/link";
+import Image from 'next/image'
 
 
 export default function Hero() {
   return (
-    <div name='hero' className="grid grid-cols-1 md:grid-cols-2 space-x-4 my-12 mx-8 w-4/5 mx-auto">
+    <div name='hero' className="grid grid-cols-1 lg:grid-cols-2 space-x-4 my-12 w-4/5 mx-auto">
 
        <div className="px-4">
        <p className="text-4xl font-medium my-4 text-green-700">Welcome to our flavorful world of supreme food! </p>
@@ -22,7 +23,7 @@ export default function Hero() {
        provides the perfect setting for memorable moments shared with loved ones.
        </p>
        <p className="text-lg my-4 px-4">
-       Can't make it to our restaurant? No problem! Enjoy the same delightful 
+       Can not make it to our restaurant? No problem! Enjoy the same delightful 
        flavors in the comfort of your home with our hassle-free delivery service.
        </p>
        </div>
@@ -43,14 +44,31 @@ export default function Hero() {
        </div>
        </div>
 
-      <div className="flex justify-center items-center gap-2 overflow-hidden">
-        <div className="flex flex-col gap-2">
-        <img src="/burger.jpg" className="object-fill h-52 w-52 rounded-lg"/>
-        <img src="/chicken.jpg" className="object-fill h-52 w-52 rounded-lg"/>
+      <div className="flex justify-center items-center gap-2 overflow-hidden w-full">
+       <div className="flex flex-col gap-1 ">
+       <div className="relative h-52 w-52" >
+         <Image src="/burger.jpg" fill={true} sizes="(min-width: 768px) 100vw"  alt='menu item' 
+                 style={{objectFit: "cover"}} className="rounded-lg"/>
+       </div>
+        {/* <img src="/burger.jpg" className="object-fill h-52 w-52 rounded-lg"/> */}
+        
+        <div className="relative h-52 w-52" >
+         <Image src="/chicken.jpg" fill={true} sizes="(min-width: 768px) 100vw"  alt='menu item' 
+                 style={{objectFit: "cover"}} className="rounded-lg"/>
+       </div>
+        {/* <img src="/chicken.jpg" className="object-fill h-52 w-52 rounded-lg"/> */}
         </div >
-        <div className="flex flex-col gap-2">
-        <img src="/salad.jpg" className="object-fill h-52 w-52 rounded-lg"/>
-        <img src="/sandwich.jpg" className="object-fill h-52 w-52 rounded-lg"/>
+        <div className="flex flex-col gap-1">
+        <div className="relative h-52 w-52" >
+         <Image src="/salad.jpg" fill={true} sizes="(min-width: 768px) 100vw"  alt='menu item' 
+                 style={{objectFit: "cover"}} className="rounded-lg"/>
+       </div>
+        {/* <img src="/salad.jpg" className="object-fill h-52 w-52 rounded-lg"/> */}
+        <div className="relative h-52 w-52" >
+         <Image src="/sandwich.jpg" fill={true} sizes="(min-width: 768px) 100vw"  alt='menu item'  
+                 style={{objectFit: "cover"}} className="rounded-lg"/>
+       </div>
+        {/* <img src="/sandwich.jpg" className="object-fill h-52 w-52 rounded-lg"/> */}
         </div>
        </div>
 

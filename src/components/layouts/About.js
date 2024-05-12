@@ -7,7 +7,7 @@ export default function About() {
       <div className="bg-gray-100 text-lg rounded-lg my-4 p-4 w-3/5 shadow-md shadow-gray-200">
       <p className="text-2xl font-medium text-green-700">About us</p>
       Welcome to our restaurant, where culinary excellence meets 
-      exceptional service. Whether you're seeking a cozy dine-in 
+      exceptional service. Whether you are seeking a cozy dine-in 
       experience or the convenience of delivery, we have something 
       special for every palate. Explore our enticing menu crafted 
       with passion and precision by our expert chefs.

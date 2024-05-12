@@ -89,7 +89,7 @@ export default function Users() {
         if(status === 'authenticated') {
             loadUsers()
         }
-    },[status])
+    },[status, loadUsers])
       
   return (
     <div className="h-dvh">

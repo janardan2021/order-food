@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import toast from 'react-hot-toast';
 import UserNavigation from '@/components/layouts/UserNavigation'
 import Loader from "@/components/layouts/Loader";
+import Image from 'next/image'
 
 export default function ProfilePage() {
     const { data: session, status } = useSession({
@@ -156,7 +157,9 @@ export default function ProfilePage() {
       
       <div className="flex flex-col items-center sm:flex-row sm:justify-center sm:items-end my-4 ">
       <div className="w-3/5 sm:w-1/5 flex flex-col justify-center items-center">
-        <img src={image } className="object-fit w-36 h-36 rounded-lg border-2 border-green-700"/>
+        <Image src={image } width={144} height={144} alt='profile image' 
+               className="object-fit w-36 h-36 rounded-lg border-2 border-green-700" />
+        {/* <img src={image } className="object-fit w-36 h-36 rounded-lg border-2 border-green-700"/> */}
         <div className="">
         {!editPicture ? (<button className="w-full" onClick={() => setEditPicture(true)}>Edit profile picture</button>) : (
           <div className="">

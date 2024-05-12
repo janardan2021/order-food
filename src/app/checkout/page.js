@@ -91,14 +91,14 @@ export default function Checkout() {
         setCart(() => state)
         setCartLoaded(true)
         loadUserAddress()
-    },[])
+    },[state, loadUserAddress])
 
     useEffect(()=>{
         if (cartLoaded) {
             const calulatedTotal = totalPrice(cart)
             setSubTotal(calulatedTotal)
         }
-    },[cartLoaded])
+    },[cartLoaded, cart])
 
 
 async function processPayment(e) {
@@ -163,7 +163,7 @@ if(res.ok) {
         <p className='text-2xl font-medium my-4 border-b-2 border-green-700'>Payment Details</p>
         <p className='font-medium my-2'>Sub total: <span className='text-green-700'>${subTotal}</span></p>
         <p className='font-medium my-2'>Delivery fee: <span className='text-green-700'>${deliveryFee}</span></p>
-        <p className='font-medium my-2'>Total: <span className='text-green-700'>${subTotal + deliveryFee}</span></p>
+        <p className='font-medium my-2'>Total: <span className='text-green-700'>${addDecimals(subTotal + deliveryFee)}</span></p>
         <button onClick={processPayment}>Pay now</button>
       </div>
     </div>

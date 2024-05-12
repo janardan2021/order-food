@@ -55,7 +55,7 @@ export default function OrderDetails({params}) {
     if(status === 'authenticated') {
         loadOrder()
     }
-},[status])
+},[status, loadOrder])
 
 console.log(order)
 

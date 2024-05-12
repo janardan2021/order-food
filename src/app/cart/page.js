@@ -60,7 +60,7 @@ export default function Cart() {
      if (cartIsChanged) {
       loadCart()
      }
-  },[cartIsChanged])
+  },[cartIsChanged, loadCart])
 
   return (
     <div className='h-dvh'>

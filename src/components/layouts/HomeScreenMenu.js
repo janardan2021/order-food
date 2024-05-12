@@ -5,6 +5,7 @@ import Loader from './Loader.js'
 
 import { CartContext } from "@/components/CartContextProvider.js";
 import { useContext } from "react";
+import Image from 'next/image'
 
 export default function HomeScreenMenu() {
   // const localStorage = (typeof window !== "undefined") ? window.localStorage : null
@@ -89,7 +90,7 @@ export default function HomeScreenMenu() {
       loadMenuItems()
     }
    
-  },[])
+  },[loadMenuItems, menusLoaded])
 
 
   // useEffect(()=>{
@@ -119,8 +120,15 @@ export default function HomeScreenMenu() {
               <div onClick={(e) =>doNotPropagate(e)}  className="relative flex flex-col items-center mt-10 md:mt-0">
               <p className="text-xl font-medium my-2">{modalMenu.name}</p>
               <div>
-              <img src={modalMenu.image } className="object-fit w-48 h-48 rounded-lg shadow-md shadow-gray-200
-                          hover:shadow-lg hover:shadow-gray-300"/>
+              <Image src={modalMenu.image }
+                        width={192}
+                        height={144}
+                        alt="Picture of the menu item"
+                        className="object-fit w-48 h-36 rounded-lg shadow-md shadow-gray-200
+                          hover:shadow-lg hover:shadow-gray-300"
+                      />
+              {/* <img src={modalMenu.image } className="object-fit w-48 h-48 rounded-lg shadow-md shadow-gray-200
+                          hover:shadow-lg hover:shadow-gray-300"/> */}
               </div>
               <p className="my-2 px-2">{modalMenu.description}</p>
 
@@ -175,8 +183,16 @@ export default function HomeScreenMenu() {
                                           hover:shadow-lg hover:shadow-gray-400 transition ease-in-out p-4 w-full">
                     <p className="text-xl font-medium my-2">{menuItem.name}</p>
                     <div>
-                    <img src={menuItem.image } className="object-fit w-48 h-36 rounded-lg shadow-md shadow-gray-200
-                          hover:shadow-lg hover:shadow-gray-300"/>
+                    <Image
+                        src={menuItem.image }
+                        width={192}
+                        height={144}
+                        alt="Picture of the menu item"
+                        className="object-fit w-48 h-36 rounded-lg shadow-md shadow-gray-200
+                          hover:shadow-lg hover:shadow-gray-300"
+                      />
+                    {/* <img src={menuItem.image } className="object-fit w-48 h-36 rounded-lg shadow-md shadow-gray-200
+                          hover:shadow-lg hover:shadow-gray-300"/> */}
                     </div>
                     <p className="my-2">{menuItem.description}</p>
                     <p>Starting from: <span className="text-green-700">${menuItem.sizes[0].price}</span></p>

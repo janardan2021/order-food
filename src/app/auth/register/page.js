@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import {useState, useEffect} from 'react'
 import { useSearchParams } from 'next/navigation'
 import toast from 'react-hot-toast';
+import Image from 'next/image'
 
 export default function Register() {
   const { data: session, status } = useSession()
@@ -22,7 +23,7 @@ export default function Register() {
     if(status === 'authenticated') {
       router.refresh()
       router.push("/")}
-  },[])
+  },[router, status])
   
   const handleChange = (e) => {
       const value = e.target.value
@@ -93,7 +94,9 @@ export default function Register() {
                       space-x-2 w-full text-center cursor-pointer shadow-md hover:shadow-gray-500 
                       transition ease-in-out bg-cyan-600 hover:bg-cyan-700">
          <div className="bg-white w-fit rounded-full p-1">
-         <img src='/google.png' className='object-fill w-5 h-5'/>
+         <Image src='/google.png' width={20} height={20}
+                alt="google icon" className='object-fill w-5 h-5' />
+         {/* <img src='/google.png' className='object-fill w-5 h-5'/> */}
          </div>
          <p className="text-white">Login with google</p>
         </div>
