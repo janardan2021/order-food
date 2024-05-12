@@ -2,32 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"]{
+   @apply border border-gray-500 bg-gray-200 rounded-lg;
+   @apply block w-full mb-2 p-2;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+input[type="text"]:disabled,
+input[type="email"]:disabled,
+input[type="number"]:disabled,
+input[type="password"]:disabled{
+   @apply border border-gray-500 bg-gray-400 text-gray-500 rounded-lg;
+   @apply block w-full mb-2 p-2;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+button {
+    @apply bg-green-600 text-white rounded-lg; 
+    @apply block my-4 py-2 px-4;
+    @apply hover:bg-green-700 cursor-pointer shadow-md hover:shadow-gray-500 transition ease-in-out
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+button[type="submit"]{
+    @apply bg-green-600 text-white rounded-lg; 
+    @apply block w-full my-4 py-2 px-4;
+    @apply hover:bg-green-700 cursor-pointer shadow-md hover:shadow-gray-500 transition ease-in-out
 }
+
+
+
+.button {
+    @apply bg-green-600 rounded-md; 
+    @apply block my-2 py-2 px-4 w-full text-center;
+    @apply hover:bg-green-700 cursor-pointer shadow-md hover:shadow-gray-500 transition ease-in-out
+}
+
+.customButton {
+    @apply rounded-md; 
+    @apply block my-2 py-2 px-4 w-full text-center;
+    @apply cursor-pointer shadow-md hover:shadow-gray-500 transition ease-in-out
+}
+
+
