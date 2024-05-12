@@ -9,6 +9,7 @@ import Footer from "../components/layouts/Footer.js";
 import AuthProvider from "../components/AuthProvider.js"
 import { CartContextProvider } from '@/components/CartContextProvider';
 import toast, { Toaster } from 'react-hot-toast';
+import { Suspense } from 'react'
 // import Head from 'next/head'
 
 export const metadata = {
@@ -18,6 +19,10 @@ export const metadata = {
     icon: "/favicon.ico",
   },
 };
+
+function SearchBarFallback() {
+  return <div>Loading....</div>
+}
 
 
 export default function RootLayout({ children }) {
@@ -32,9 +37,9 @@ export default function RootLayout({ children }) {
         <Toaster />
 
           <Header />
-
+          <Suspense fallback={<SearchBarFallback />}>
           {children}
-
+          </Suspense>
           <Footer />
 
         </CartContextProvider>
