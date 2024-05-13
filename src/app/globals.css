@@ -44,4 +44,16 @@ button[type="submit"]{
     @apply cursor-pointer shadow-md hover:shadow-gray-500 transition ease-in-out
 }
 
+.infoButton {
+    @apply bg-sky-600 text-white rounded-lg; 
+    @apply  my-4 py-2 px-4 text-center;
+    @apply hover:bg-sky-700 cursor-pointer shadow-md hover:shadow-gray-500 transition ease-in-out
+}
+
+.successButton {
+    @apply bg-green-600 text-white rounded-lg; 
+    @apply  my-4 py-2 px-4 text-center;
+    @apply hover:bg-green-700 cursor-pointer shadow-md hover:shadow-gray-500 transition ease-in-out
+}
+
 

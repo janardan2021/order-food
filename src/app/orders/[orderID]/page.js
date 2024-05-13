@@ -18,7 +18,7 @@ export default function OrderDetails({params}) {
 
  async function markAsDeliverd(e) {
   e.preventDefault()
-  console.log('Marking as delivered')
+  // console.log('Marking as delivered')
   const res = await fetch(`/api/users/orders/${order._id}`, {
       method: "PATCH",
       body: JSON.stringify({orderId: order._id}),
@@ -69,7 +69,7 @@ console.log(order)
       </p>
       {order && (
         <div>
-           <div className="flex justify-center space-x-4">
+           <div className="flex justify-center space-x-4 p-2 flex-wrap">
               <p className="font-medium">Order ID: {order._id}</p>
               <p className="font-medium">User: {order.name}</p>
               <p className="font-medium">Email: {order.email}</p>
@@ -78,8 +78,7 @@ console.log(order)
               <p className="text-lg font-medium text-center my-4" >Ordered Items</p>
               <div>
                 {order.menuItems.map((menuItem, index) => (
-                  <div key={index} className="bg-gray-100 shadow-md shadow-gray-300
-                      mx-4 my-2">
+                  <div key={index} className="bg-gray-100 shadow-md shadow-gray-300 p-2 my-1">
                     <p className="text-lg font-medium text-green-700 text-center my-2">{menuItem.menuName}</p>
                     <div className="flex justify-center space-x-4">
                       <p>Quantity: {menuItem.menuQty}</p>
@@ -103,16 +102,31 @@ console.log(order)
            </div>
            <p className="text-lg font-medium text-center my-4">Total: <span className="text-green-700">${order.total}</span></p>
            <div className="flex justify-center space-x-8">
-           <button disabled={isPaid ? true : false}
+            {isPaid ? (
+              <div className="my-4 py-2 px-4 text-center bg-green-600 text-white rounded-lg" disabled='true'>Payment Successful</div>
+            ) : (
+              <div className="my-4 py-2 px-4 text-center bg-sky-600 text-white rounded-lg
+               hover:bg-sky-700 cursor-pointer shadow-md hover:shadow-gray-500 transition 
+                 ease-in-out" onClick={goToCheckout}>Pay now</div>
+            )}
+           {/* <button disabled={isPaid ? true : false}
                    onClick={goToCheckout}>
             {order.isPaid ? 'Payment Successful' : 'Pay Now'}
-           </button>
-           {session?.user.isAdmin && (
-            <button disabled={isDelivered ? true : false}
+           </button> */}
+           {session?.user.isAdmin && isDelivered && (
+            <div className="my-4 py-2 px-4 text-center bg-green-600 text-white rounded-lg" 
+                 disabled='true'>Delivered</div>)
+           }
+           {session?.user.isAdmin && !isDelivered && (
+            <div className="my-4 py-2 px-4 text-center bg-sky-600 text-white rounded-lg
+                           hover:bg-sky-700 cursor-pointer shadow-md hover:shadow-gray-500 transition 
+                            ease-in-out" onClick={markAsDeliverd}>Mark as delivered</div>)
+           }
+            {/* <button disabled={isDelivered ? true : false}
                onClick={markAsDeliverd}>
             {order.isDelivered ? 'Delivered' : 'Mark as delivered'}
-            </button>
-           )}
+            </button> */}
+           
            </div>
         </div>
       )}

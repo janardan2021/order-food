@@ -6,11 +6,11 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <div name='hero' className="grid grid-cols-1 lg:grid-cols-2 space-x-4 my-12 w-4/5 mx-auto">
+    <div name='hero' className="grid grid-cols-1 lg:grid-cols-2 lg:space-x-4 my-12 w-4/5 mx-auto">
 
-       <div className="px-4">
-       <p className="text-4xl font-medium my-4 text-green-700">Welcome to our flavorful world of supreme food! </p>
-       <div className="bg-gray-100 rounded-lg p-2 shadow-md shadow-gray-200">
+       <div className="w-full">
+       <p className="text-4xl font-medium my-4 text-center text-green-700">Welcome to our flavorful world of supreme food! </p>
+       <div className="bg-gray-100 rounded-lg p-2 shadow-md shadow-gray-200 w-full">
        <p className="text-lg my-4 px-4">
        We take pride in crafting the perfect blend of crispy, succulent chicken
        nestled between soft, toasted buns. Each bite is a symphony of taste and 
@@ -29,13 +29,13 @@ export default function Hero() {
 
        <div className="flex justify-around space-x-2 ">
         <Link href={'/menu'} className="w-full">
-        <button className="flex justify-center space-x-4 w-4/6">
+        <button className="flex justify-center space-x-4 w-5/6 md:4/6">
             <p>Order now</p>
             <RightArrow />
         </button>
         </Link>
         <Link href={'/about'} className="w-full">
-        <button className="flex justify-center space-x-4 w-4/6">
+        <button className="flex justify-center space-x-4 w-5/6 md:4/6">
             <p>About us</p>
             <RightArrow />
         </button>

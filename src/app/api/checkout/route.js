@@ -13,7 +13,7 @@ export async function POST(req){
        
     const {checkoutCart: cart, address} = await req.json() 
     const session = await getServerSession(options)
-    console.log('This is the session', session)
+    // console.log('This is the session', session)
     const createOrder = {
         email: session.user.email,
         name: session.user.name,
@@ -89,7 +89,7 @@ export async function POST(req){
         return NextResponse.json(checkoutSession, {status: 201})
        
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         return NextResponse.json({message: 'Error in checkout'}, {status: 501})
     }
 }
