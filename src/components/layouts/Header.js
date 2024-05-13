@@ -27,7 +27,7 @@ export default function Header() {
           <Link href='/' className="font-bold text-xl  md:text-2xl lg:text-3xl">Order-Food</Link>
         </div>
 
-        <div className="flex justify-around sm:justify-between mt-2 sm:mt-0 w-5/6">
+        <div className="flex justify-between mt-2 sm:mt-0 w-5/6 mx-auto">
         <div className="flex font-semibold text-sm sm:text-lg lg:space-x-16 md:space-x-8 space-x-2">
           <Link href="/" className="hover:scale-105 transition ease-in-out">Home</Link>
           <Link href="/menu" className="hover:scale-105 transition ease-in-out">Menus</Link>
@@ -36,7 +36,7 @@ export default function Header() {
         </div>
         
         {session && (
-           <div className="flex font-semibold text-sm sm:text-lg space-x-2 md:space-x-4">
+           <div className="flex font-semibold text-sm sm:text-lg space-x-2 md:space-x-4 w-1/2 justify-end">
             <CartIcon />
             <Link href={'/profile'} className="hover:scale-105 transition ease-in-out">{userName}</Link>
             <Link href={"/auth/signOut"} className="hover:scale-105 transition ease-in-out" >SignOut</Link>
@@ -46,7 +46,7 @@ export default function Header() {
            <Link href={"/auth/signOut"} >Logout</Link>
           )} */}
         {!session && (
-         <div className="flex font-semibold text-sm sm:text-lg space-x-2 md:space-x-4">
+         <div className="flex font-semibold text-sm sm:text-lg space-x-2 md:space-x-4 w-1/2 justify-end">
           <CartIcon />
          <Link href={"/auth/signIn"} className="hover:scale-105 transition ease-in-out" >SignIn</Link>
          <Link href="/auth/register" className="hover:scale-105 transition ease-in-out" >Register</Link>
