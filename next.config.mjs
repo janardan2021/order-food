@@ -9,6 +9,10 @@ const nextConfig = {
             hostname: '*.googleusercontent.com/'
            },
            {
+            protocol: 'https',
+            hostname: 'lh3.googleusercontent.com'
+           },
+           {
             protocol: 'http',
             hostname: "res.cloudinary.com"
            }
