@@ -8,7 +8,7 @@ const Stripe = require('stripe');
 const stripe = Stripe(process.env.STRIPE_SK);
 
 export async function POST(req){
-    console.log('got the checkout request')
+    // console.log('got the checkout request')
     try {
        
     const {checkoutCart: cart, address} = await req.json() 
@@ -41,7 +41,7 @@ export async function POST(req){
     }
     const order = new Order(createOrder)
     const createdOrder = await order.save()
-    console.log('the created order is', createOrder)
+    // console.log('the created order is', createOrder)
 
     const line_items = [];
     createdOrder.menuItems.forEach((menuItem) => {
@@ -85,7 +85,7 @@ export async function POST(req){
         cancel_url:(process.env.NODE_ENV === 'production') ? `${process.env.APP_URL}orders/${createdOrder._id}` 
                                                              : `http://localhost:3000/orders/${createdOrder._id}`
       });
-      console.log('The checkout session', checkoutSession)
+      // console.log('The checkout session', checkoutSession)
         return NextResponse.json(checkoutSession, {status: 201})
        
     } catch (error) {
