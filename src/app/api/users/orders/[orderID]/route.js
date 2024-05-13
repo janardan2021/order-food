@@ -26,7 +26,7 @@ export async function GET(req, {params}){
     // console.log('Got the patch request')
     try {
       const order = await Order.findByIdAndUpdate({_id: orderID}, { isDelivered: true })
-      console.log(order)
+      // console.log(order)
       if (order) {
         return NextResponse.json({message: 'Order update successful'}, {status: 201})
       }

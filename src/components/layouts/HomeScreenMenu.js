@@ -57,7 +57,7 @@ export default function HomeScreenMenu(props) {
     
   }
   function doNotPropagate(e){
-    console.log(e.target.id)
+    // console.log(e.target.id)
     e.stopPropagation()
   }
   // console.log(showModal)
@@ -88,7 +88,7 @@ export default function HomeScreenMenu(props) {
                        }
     dispatch({type:'ADDTOCART', payload: toCartMenu})
     toast.success('Menu added into the cart!')
-    console.log('Menu added to cart')
+    // console.log('Menu added to cart')
   }
 
 

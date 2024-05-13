@@ -26,7 +26,7 @@ export async function GET(){
 
   export async function PATCH(req){
     const body = await req.json() 
-    console.log(body)
+    // console.log(body)
     try {
       const session = await getServerSession(options)
     //   console.log(session)

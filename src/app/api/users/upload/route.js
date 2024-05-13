@@ -26,7 +26,7 @@ export async function POST(req){
     // const body = await req.json() 
     const body = await req.formData() 
     const session = await getServerSession(options)
-    console.log(session)
+    // console.log(session)
     const user = await User.findOne({email: session.user.email})
     // console.log(user)
     
@@ -51,9 +51,9 @@ export async function POST(req){
                 resolve(result)
             }).end(buffer) 
         })
-        console.log(imageInfo)
+        // console.log(imageInfo)
         const updatedUser = await User.updateOne({email: session.user.email}, { image: imageInfo.url });
-        console.log("Updated User from database", updatedUser)
+        // console.log("Updated User from database", updatedUser)
         const url = imageInfo.url
         return NextResponse.json({url, message: 'Profile picture successfully updated'}, {status: 201})
     }

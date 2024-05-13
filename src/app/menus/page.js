@@ -80,7 +80,7 @@ export default function Menus() {
             setImageURL((imageURL) => response.url)
             toast.remove(loadingToastId)
             toast.success('Successfully updated profile!')
-            console.log(response)
+            // console.log(response)
         } else {
           toast.remove(loadingToastId)
           toast.error('Something went wrong')
@@ -91,7 +91,7 @@ export default function Menus() {
     const formData = {name, description, sizes, addOns, image:imageURL}
     const handleCreateMenu = async (e) => {
         const loadingToastId = toast.loading('Creating the menu item....')
-        console.log("Form Data", formData)
+        // console.log("Form Data", formData)
         e.preventDefault()
         const res = await fetch("/api/users/menu", {
           method: "POST",

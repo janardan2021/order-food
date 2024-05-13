@@ -8,7 +8,7 @@ export async function POST(req){
     try {
        const body = await req.json() 
        const addressData = body.addressData
-       console.log(addressData)
+      //  console.log(addressData)
       
        const duplicate = await Address.findOne({user_email: addressData.user_email})
        
@@ -24,7 +24,7 @@ export async function POST(req){
         return NextResponse.json({message: 'User Address Created'}, {status: 201})
        }
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         return NextResponse.json({message: 'Error adding / updating address'}, {status: 501})
     }
 }

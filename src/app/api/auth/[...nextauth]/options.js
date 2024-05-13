@@ -68,7 +68,7 @@ export const options = {
                   return null
                 }
               } catch (error) {
-                console.log(error.message)
+                // console.log(error.message)
                 throw error; // Throws a previously defined value (e.g. within a catch block)
                 // throw new Error(error.message); // Throws a new Error object
                 // return null

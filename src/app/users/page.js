@@ -76,7 +76,7 @@ export default function Users() {
             const response = await res.json()
             toast.remove(loadingToastId)
             toast.success('Successfully deleted user!')
-            console.log(response)
+            // console.log(response)
             setUsers((prev) => filteredUser)
         }else {
             toast.remove(loadingToastId)

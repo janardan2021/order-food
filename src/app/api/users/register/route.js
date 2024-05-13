@@ -8,7 +8,7 @@ export async function POST(req){
     try {
        const body = await req.json() 
        const userData = body.formData
-       console.log(userData)
+    //    console.log(userData)
 
        if(!userData?.email || !userData?.password || !userData?.name){
         return NextResponse.json({message: 'All fields are required'}, {status: 400})
@@ -27,7 +27,7 @@ export async function POST(req){
        const user = await User.create({...userData, imageId : uuidv4()})
        return NextResponse.json({message: 'User Created'}, {status: 201})
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         return NextResponse.json({message: 'Error', error}, {status: 500})
     }
 }

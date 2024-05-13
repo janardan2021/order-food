@@ -105,7 +105,7 @@ async function processPayment(e) {
   e.preventDefault()
   // const stripe = await asyncStripe;
   const checkoutCart = getCheckoutCart(cart)
-  console.log(cart)
+  // console.log(cart)
  if(addressLoaded){
   const res = await fetch("/api/checkout", {
     method: "POST",
@@ -120,7 +120,7 @@ if(res.ok) {
     //   sessionId: response.id,
     // });
     window.location.assign(response.url)
-    console.log('This is result from stripe redirect',result)
+    // console.log('This is result from stripe redirect',result)
     
   } else {
       console.log('Something went wrong')

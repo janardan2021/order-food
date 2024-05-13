@@ -63,7 +63,7 @@ export async function GET(req, {params}){
         return NextResponse.json(checkoutSession, {status: 201})
        
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         return NextResponse.json({message: 'Error in checkout'}, {status: 501})
     }
 }

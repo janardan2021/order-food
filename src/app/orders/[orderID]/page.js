@@ -44,7 +44,7 @@ export default function OrderDetails({params}) {
     const res = await fetch(`/api/users/orders/${params.orderID}`)
    if (res.ok){
       const response = await res.json()
-      console.log(response)
+      // console.log(response)
       setOrder(() => response)
       setIsPaid(response.isPaid)
       setIsDelivered(response.isDelivered)
@@ -57,7 +57,7 @@ export default function OrderDetails({params}) {
     }
 },[status])
 
-console.log(order)
+// console.log(order)
 
   return (
     <div className="mb-96">

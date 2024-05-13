@@ -16,7 +16,7 @@ export async function POST(req){
         return NextResponse.json({message: 'Error adding menu item!'}, {status: 501})
        }
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         return NextResponse.json({message: 'Error adding menu item!'}, {status: 501})
     }
 }

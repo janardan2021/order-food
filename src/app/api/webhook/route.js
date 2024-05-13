@@ -23,7 +23,7 @@ if (request.method === "POST") {
     try {
        event = stripe.webhooks.constructEvent(body, sig, webHookSecret);
     } catch (err) {
-        console.log(err.message)
+        // console.log(err.message)
         return new Response(`Webhook Error: ${err}`, { status: 400});
     }
 

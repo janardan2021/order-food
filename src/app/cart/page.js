@@ -33,7 +33,7 @@ export default function Cart() {
   const [cart, setCart] = useState(null)
   const [cartIsChanged , setCartIsChanged] = useState(true)
 
-  console.log(cart)
+  // console.log(cart)
 
   function changeQty(e, index){
     const updatedCart =  produce(cart, draft => {

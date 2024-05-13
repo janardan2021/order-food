@@ -35,7 +35,7 @@ export const CartContextProvider = ({children}) => {
               } else {
                 draft.cartItems = [...state.cartItems, item]
               }})
-              console.log('This is updated state', updatedState)
+              // console.log('This is updated state', updatedState)
               localStorage?.setItem('order-food-cart', JSON.stringify(updatedState))
             //   console.log('Saved the local storage', JSON.parse(localStorage.getItem('order-food-cart')))
               return updatedState

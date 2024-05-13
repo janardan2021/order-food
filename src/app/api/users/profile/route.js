@@ -6,7 +6,7 @@ import { NextResponse } from "next/server"
 
 export async function PUT(req){
     const session = await getServerSession(options)
-    console.log("session in the profile route",session)
+    // console.log("session in the profile route",session)
     try {
        const body = await req.json() 
        const name = body.name
