@@ -60,7 +60,7 @@ export default function OrderDetails({params}) {
 console.log(order)
 
   return (
-    <div>
+    <div className="mb-96">
       <UserNavigation isAdmin={session?.user.isAdmin}/>
     <div className="w-4/5 md:w-3/5 mx-auto bg-gray-100 shadow-md shadow-gray-200
                     my-12 p-4 rounded-lg">
@@ -103,7 +103,7 @@ console.log(order)
            <p className="text-lg font-medium text-center my-4">Total: <span className="text-green-700">${order.total}</span></p>
            <div className="flex justify-center space-x-8">
             {isPaid ? (
-              <div className="my-4 py-2 px-4 text-center bg-green-600 text-white rounded-lg" disabled='true'>Payment Successful</div>
+              <div className="my-4 py-2 px-4 text-center bg-green-600 text-white rounded-lg" disabled={true}>Payment Successful</div>
             ) : (
               <div className="my-4 py-2 px-4 text-center bg-sky-600 text-white rounded-lg
                hover:bg-sky-700 cursor-pointer shadow-md hover:shadow-gray-500 transition 
@@ -115,7 +115,7 @@ console.log(order)
            </button> */}
            {session?.user.isAdmin && isDelivered && (
             <div className="my-4 py-2 px-4 text-center bg-green-600 text-white rounded-lg" 
-                 disabled='true'>Delivered</div>)
+                 disabled={true}>Delivered</div>)
            }
            {session?.user.isAdmin && !isDelivered && (
             <div className="my-4 py-2 px-4 text-center bg-sky-600 text-white rounded-lg

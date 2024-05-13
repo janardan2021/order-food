@@ -6,12 +6,12 @@ import { NextResponse } from "next/server"
 
 export async function GET(req, {params}){
     const orderID  = params.orderID
-    console.log(orderID)
+    // console.log(orderID)
     try {
       // const session = await getServerSession(options)
       const order = await Order.findById({_id: orderID})
       if (order) {
-        console.log(order)
+        // console.log(order)
           return NextResponse.json(order, {status: 201})
       } else {
         return NextResponse.json({message: 'No user orders found'}, {status: 501})

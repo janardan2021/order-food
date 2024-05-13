@@ -7,7 +7,9 @@ import { CartContext } from "@/components/CartContextProvider.js";
 import { useContext } from "react";
 import Image from 'next/image'
 
-export default function HomeScreenMenu() {
+export default function HomeScreenMenu(props) {
+  // console.log(props)
+  const count = props.count
   // const localStorage = (typeof window !== "undefined") ? window.localStorage : null
   const {dispatch} = useContext(CartContext)
 
@@ -26,7 +28,12 @@ export default function HomeScreenMenu() {
     if (res.ok){
       const response = await res.json()
       // console.log(response)
+      if (response.length > count) {
+        const limitedArry = response.slice(0, count)
+        setMenuItems((prev) => limitedArry)
+      } else {
       setMenuItems((prev) => response)
+      }
       setMenusLoaded((prev) => true)
     }
   }

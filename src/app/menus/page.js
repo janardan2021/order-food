@@ -148,7 +148,7 @@ export default function Menus() {
 
       <div className="flex flex-col justify-center items-center">
         <label className="font-medium text-lg mb-2">Upload the menu avatar</label>
-        <Image src={imageURL }
+        <Image src={imageURL === '' ? '/blank.jpg' : imageURL }
                         width={144}
                         height={144}
                         alt="Picture of the menu item"

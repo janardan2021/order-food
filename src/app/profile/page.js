@@ -149,7 +149,7 @@ export default function ProfilePage() {
         return redirect('/auth/signin')
     }
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center mb-72">
       <UserNavigation isAdmin={session.user.isAdmin}/>
 
       <div>
@@ -157,8 +157,10 @@ export default function ProfilePage() {
       
       <div className="flex flex-col items-center sm:flex-row sm:justify-center sm:items-end my-4 ">
       <div className="w-3/5 sm:w-1/5 flex flex-col justify-center items-center">
-        <Image src={image } width={144} height={144} alt='profile image' 
-               className="object-fit w-36 h-36 rounded-lg border-2 border-green-700" />
+        {image === '' ? <Loader /> : (
+          <Image src={image} width={144} height={144} alt='profile image' 
+          className="object-fit w-36 h-36 rounded-lg border-2 border-green-700" />
+        )}
         {/* <img src={image } className="object-fit w-36 h-36 rounded-lg border-2 border-green-700"/> */}
         <div className="">
         {!editPicture ? (<button className="w-full" onClick={() => setEditPicture(true)}>Edit profile picture</button>) : (

@@ -21,11 +21,13 @@ export default function Header() {
   // }, [])
 
   return (
-    <header className="flex items-center justify-between bg-green-700 text-white 
+    <header className="flex flex-col justify-center sm:flex-row sm:justify-between sm:items-center bg-green-700 text-white 
                       h-20 px-6 mb-2">
-        <div>
-          <Link href='/' className="font-semibold lg:font-bold md:text-2xl lg:text-4xl">Order-Food</Link>
+        <div className="">
+          <Link href='/' className="font-bold text-xl  md:text-2xl lg:text-3xl">Order-Food</Link>
         </div>
+
+        <div className="flex justify-around sm:justify-between mt-2 sm:mt-0 w-5/6">
         <div className="flex font-semibold text-sm sm:text-lg lg:space-x-16 md:space-x-8 space-x-2">
           <Link href="/" className="hover:scale-105 transition ease-in-out">Home</Link>
           <Link href="/menu" className="hover:scale-105 transition ease-in-out">Menus</Link>
@@ -56,6 +58,8 @@ export default function Header() {
          <Link href="/auth/register" >Register</Link>
          </div>
        )} */}
+        </div>
+
       </header>
   )
 }

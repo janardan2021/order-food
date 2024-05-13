@@ -24,7 +24,7 @@ export default function Users() {
 
         if (res.ok){
             const response = await res.json()
-            console.log(response)
+            // console.log(response)
             setUsers(() => response)
         }
     }
@@ -52,7 +52,7 @@ export default function Users() {
             const response = await res.json()
             toast.remove(loadingToastId)
             toast.success('Successfully updated user profile!')
-            console.log(response)
+            // console.log(response)
         }else {
             toast.remove(loadingToastId)
             toast.error('Error updating user profile!')
@@ -92,10 +92,10 @@ export default function Users() {
     },[status])
       
   return (
-    <div className="h-dvh">
+    <div className="mb-80">
     <UserNavigation isAdmin={session?.user.isAdmin}/>
       
-      <div className='flex flex-col my-12 justify-around w-5/6 mx-auto py-8
+      <div className='flex flex-col mb- my-12 justify-around w-5/6 mx-auto py-8
                       bg-gray-100 shadow-md shadow-gray-200 hover:shadow-lg
                       hover:shadow-gray-400 transition ease-in-out px-1'>
         <div className='flex justify-around my-2'>

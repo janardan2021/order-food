@@ -33,7 +33,7 @@ export default function Orders() {
 },[status])
   
   return (
-    <div className="h-dvh">
+    <div className="mb-72">
       <UserNavigation isAdmin={session?.user.isAdmin}/>
       <div className='flex flex-col my-12 justify-around  w-5/6 mx-auto py-8
                       bg-gray-100 shadow-md shadow-gray-200 hover:shadow-lg

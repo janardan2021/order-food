@@ -64,16 +64,14 @@ export default function MenusList() {
                                           hover:shadow-lg hover:shadow-gray-400 transition ease-in-out p-4 w-full">
                     <p className="text-xl font-medium my-2">{menuItem.name}</p>
                     <div>
-                      
                     <Image
                         src={menuItem.image }
                         width={192}
                         height={144}
-                        priority={false}
                         alt="Picture of the menu item"
-                        className="rounded-lg shadow-md shadow-gray-200
+                        className="object-fit w-48 h-36 rounded-lg shadow-md shadow-gray-200
                           hover:shadow-lg hover:shadow-gray-300"
-                      />
+                      /> 
                     {/* <img src={menuItem.image } className="object-fit w-48 h-36 rounded-lg shadow-md shadow-gray-200
                           hover:shadow-lg hover:shadow-gray-300"/> */}
                     </div>

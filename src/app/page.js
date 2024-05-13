@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <Hero />
 
-      <HomeScreenMenu />
+      <HomeScreenMenu count={6}/>
       
       <About />
 
