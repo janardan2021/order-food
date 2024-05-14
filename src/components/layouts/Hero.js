@@ -46,7 +46,7 @@ export default function Hero() {
             </div>
        </div>
        
-       <div className="flex justify-center items-center space-x-1 px-4 w-full lg:w-1/2 mb-4 lg:mb-0">
+       <div className="flex justify-center items-center space-x-1 px-12 w-full lg:w-1/2 mb-4 lg:mb-0">
        <div className="flex flex-col space-y-1 ">
        <div className="relative h-52 w-52" >
          <Image src="/burger.jpg" fill={true} sizes="(min-width: 768px) 100vw"  alt='menu item' 

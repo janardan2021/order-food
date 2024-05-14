@@ -2,9 +2,9 @@
 
 export default function Contact() {
   return (
-    <div name='contact'  className="flex flex-col items-center gap-4 px-4 my-12">
+    <div name='contact'  className="flex flex-col items-center gap-4 my-12">
       <p className="text-4xl font-medium text-green-700">Contact</p>
-      <div className="grid grid-cols-1 md:grid-cols-2 w-3/5 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 w-4/5 gap-4">
         <div className=" flex flex-col bg-gray-100 rounded-lg shadow-md shadow-gray-200">
             <p className=" text-lg my-2 p-4">
             Visit usto experience culinary bliss like never before. 

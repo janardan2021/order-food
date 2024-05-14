@@ -2,9 +2,9 @@
 
 export default function About() {
   return (
-    <div name='about'  className="flex flex-col items-center gap-4 px-4 my-12">
+    <div name='about'  className="flex flex-col items-center gap-4  my-12">
       <p className="text-4xl font-medium text-green-700">About</p>
-      <div className="bg-gray-100 text-lg rounded-lg my-4 p-4 w-3/5 shadow-md shadow-gray-200">
+      <div className="bg-gray-100 text-lg rounded-lg my-4 p-4 w-4/5 shadow-md shadow-gray-200">
       <p className="text-2xl font-medium text-green-700">About us</p>
       Welcome to our restaurant, where culinary excellence meets 
       exceptional service. Whether you are seeking a cozy dine-in 
@@ -13,7 +13,7 @@ export default function About() {
       with passion and precision by our expert chefs.
       </div>
       
-      <div className="bg-gray-100 text-lg rounded-lg my-4 p-4 w-3/5 shadow-md shadow-gray-200">
+      <div className="bg-gray-100 text-lg rounded-lg my-4 p-4 w-4/5 shadow-md shadow-gray-200">
       <p className="text-2xl font-medium text-green-700">Our Menu</p>
       <p>Prepare to be tantalized by a diverse array of culinary creations, 
       meticulously prepared to delight your senses. From signature 
@@ -22,7 +22,7 @@ export default function About() {
        most discerning palates. Explore our menu online and discover 
        your new favorites today.</p>
       </div>
-      <div className="bg-gray-100 text-lg rounded-lg my-4 p-4 w-3/5 shadow-md shadow-gray-200">
+      <div className="bg-gray-100 text-lg rounded-lg my-4 p-4 w-4/5 shadow-md shadow-gray-200">
         <p className="text-2xl font-medium text-green-700">Reservation and Orders</p>
       <p>
       Ready to experience the magic of restaurant? Make a reservation 
