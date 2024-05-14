@@ -3,6 +3,7 @@ import {produce} from 'immer'
 import { CartContext } from "@/components/CartContextProvider.js";
 import { useContext, useEffect, useState } from "react";
 import { MdDeleteOutline } from "react-icons/md";
+import { useSession } from "next-auth/react"
 
 import Link from "next/link";
 
@@ -29,10 +30,12 @@ function itemTotalPrice (item) {
 }
 
 export default function Cart() {
+  const { data: session, status } = useSession()
   const {state, dispatch} = useContext(CartContext)
   const [cart, setCart] = useState(null)
   const [cartIsChanged , setCartIsChanged] = useState(true)
-
+//  console.log(session)
+//  console.log(status)
   // console.log(cart)
 
   function changeQty(e, index){
@@ -115,7 +118,7 @@ export default function Cart() {
           </div>
           {totalPrice(cart) > 0 ? 
                 <button className='w-fit mx-auto'>
-                 <Link href="/auth/signIn?redirectUrl=/checkout" >Go to checkout</Link>
+                 <Link href={status === 'authenticated' ? '/checkout' : '/auth/signIn?redirectUrl=/checkout'} >Go to checkout</Link>
                </button> : <p></p>}
         </div>
 
